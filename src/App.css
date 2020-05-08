@@ -1,38 +1,122 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+#container{
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	max-width: 300px;
+  margin: 0 auto;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+#calculator {
+	display: grid;
+	grid-template-columns: repeat(4,1fr);
+  grid-gap: 10px;
+  grid-template-areas: 
+    "display display display display"
+    "zero one two add"
+    "three four five subtract"
+    "six seven eight multiply"
+    "nine decimal equals divide"
+    "clear del . ."
+  ;
+}
+.display-container{
+  grid-area: display;
+}
+
+#result-display{
+  text-align: right;
+}
+
+.display{
+  min-height: 30px;
+  background-color: #f9f9f9;
+	margin: 0;
+}
+#calculator input[type="button"]{
+	background-color: black;
+	border-radius: 3px;
+	border: none;
   color: white;
+  padding: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+#zero{
+  grid-area: zero;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+#one{
+  grid-area: one;
+}
+
+#two{
+  grid-area: two;
+}
+
+#three{
+  grid-area: three;
+}
+
+#four{
+  grid-area: four;
+}
+
+#five{
+  grid-area: five;
+}
+
+#six{
+  grid-area: six;
+}
+
+#seven{
+  grid-area: seven;
+}
+
+#eight{
+  grid-area: eight;
+}
+
+#nine{
+  grid-area: nine;
+}
+
+#add{
+  grid-area: add;
+}
+
+#subtract{
+  grid-area: subtract;
+}
+
+#multiply{
+  grid-area: multiply;
+}
+
+#multiply{
+  grid-area: multiply;
+}
+
+#divide{
+  grid-area: divide;
+}
+
+#decimal{
+  grid-area: decimal;
+}
+#clear{
+  grid-area: clear;
+}
+#equals{
+  grid-area: equals;
+}
+
+#delete{
+  grid-area: del;
+}
+
+@media (max-width: 500px){
+  #calculator input[type="button"]{
+    padding: 20px 20px;
   }
 }
